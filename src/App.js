@@ -53,7 +53,7 @@ function App() {
   useEffect(() => {
     fetchLogs();
 
-    const ws = new WebSocket('wss://log-system-backend.onrender.com');
+    const ws = new WebSocket('wss://log-system-z6ht.onrender.com');
 
     
     ws.onopen = () => {
