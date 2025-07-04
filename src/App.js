@@ -33,7 +33,7 @@ function App() {
       if (filterParams.timestampEnd) queryParams.append('timestamp_end', filterParams.timestampEnd);
       
       const queryString = queryParams.toString();
-      const url = queryString ? `/logs?${queryString}` : '/logs';
+      const url = queryString ? `${process.env.NEXT_PUBLIC_API_URL}/logs?${queryString}` : `${process.env.NEXT_PUBLIC_API_URL}/logs`;
       
       const response = await fetch(url);
       
