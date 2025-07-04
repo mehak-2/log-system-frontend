@@ -52,8 +52,9 @@ function App() {
 
   useEffect(() => {
     fetchLogs();
-    
-    const ws = new WebSocket('ws://localhost:3000');
+
+    const socket = new WebSocket('wss://log-system-backend.onrender.com');
+
     
     ws.onopen = () => {
       console.log('WebSocket connection established');
