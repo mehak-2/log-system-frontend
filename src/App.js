@@ -33,7 +33,8 @@ function App() {
       if (filterParams.timestampEnd) queryParams.append('timestamp_end', filterParams.timestampEnd);
       
       const queryString = queryParams.toString();
-      const url = queryString ? `${process.env.NEXT_PUBLIC_API_URL}/logs?${queryString}` : `${process.env.NEXT_PUBLIC_API_URL}/logs`;
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://log-system-z6ht.onrender.com';
+      const url = queryString ? `${apiUrl}/logs?${queryString}` : `${apiUrl}/logs`;
       
       const response = await fetch(url);
       
